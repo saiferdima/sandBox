@@ -12,6 +12,7 @@ while i < (len(a)):
     elif (i==l-1):
         b.append(a[i-1]+a[0])
     else:
+        
         b.append(a[i-1]+a[i+1])
     i+=1    
 for j in b:
