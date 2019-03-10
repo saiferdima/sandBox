@@ -7,4 +7,4 @@ class PositiveList(list):
         if data <= 0:
             raise NonPositiveError()
         else:
-            list.append(self, data)
+            super().append(data)
