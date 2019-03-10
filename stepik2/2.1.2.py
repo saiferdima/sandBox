@@ -1,4 +1,6 @@
 class_array = {}
+cached_exceptions = []
+checked_list = []
 
 
 def parse_command(command):
@@ -27,6 +29,20 @@ def isParent(first_class, second_class):
         return "No"
 
 
+def is_already_checked(e_to_check):
+    temp = []
+    for ce in cached_exceptions:
+        # print("CE = " + str(ce))
+        # print("e_to_check = " + str(e_to_check))
+        temp.append(isParent(ce,e_to_check))
+    # print(temp)
+    cached_exceptions.append(e_to_check)
+    if "Yes" in temp:
+        return True
+    else:
+        return False
+
+
 n1 = int(input())
 while n1 > 0:
     creation_command = input().split(" : ")
@@ -35,6 +51,10 @@ while n1 > 0:
     n1 = n1 - 1
 n2 = int(input())
 while n2 > 0:
-    get_command = input().split(" ")
-    print(isParent(get_command[0], get_command[1]))
+    what_to_check = input()
+    if is_already_checked(what_to_check):
+        checked_list.append(what_to_check)
+    # print(checked_list)
     n2 = n2 - 1
+for n in checked_list:
+    print(n)
