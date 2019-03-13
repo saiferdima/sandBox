@@ -1,7 +1,6 @@
 a=[int(i) for i in input().split()]
 
 b=[]
-
 i=0
 l=len(a)
 
