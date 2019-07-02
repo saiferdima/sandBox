@@ -3,20 +3,22 @@ input_string = ''
 result = ''
 
 def newFormat(line):
-    temp_element = line[:line.find('=')+1]+' buildElement'
+    line=line.strip()
+    if line.find('this.')==(-1):
+        line = line[4:]
+    else:
+        line = line[5:]
+    temp_element = 'this.'+line[:line.find('=')+1]+' buildElement'
     if line.find('.all')>0:
         temp_element = temp_element + 's'        
     temp_element = temp_element + '(\''
-    temp_element = temp_element + line[line.find('this.')+5:line.find(' = ')]
+    temp_element = temp_element + line[:line.find('=')]
     temp_element = temp_element + "\', \'"
     line = line[line.find('by.')+3:]
     temp_element = temp_element + line[:line.find('(')] + '\' ,'
     temp_element = temp_element + line[line.find('(')+1: line.rfind('))')] + ')'   
     return temp_element
 
-
-#this.linkToVehicles = element.all(by.xpath("//a[contains(@ng-click, '$ctrl.goToVehicle')]"));
-#this.linkToVehicles = buildElements('linkToVehicles', 'xpath' ,"//a[contains(@ng-click, '$ctrl.goToVehicle')  
 with open ('input.txt','r') as file:
     for line in file:
         if line.find('= element')>0:
