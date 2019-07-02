@@ -1,7 +1,7 @@
 import os
 import fileConvert
-directory = "C:/RIA/OEM-Automation/paccar_support_oem_protractor/pages"
-directory_out = 'c:/DL/newFormatPages/'
+directory = ""
+directory_out = ''
 input_string = ''
 result = ''
 
