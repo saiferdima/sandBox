@@ -11,7 +11,7 @@ def newFormat(line):
     temp_element = temp_element + "\', \'"
     line = line[line.find('by.')+3:]
     temp_element = temp_element + line[:line.find('(')] + '\' ,'
-    temp_element = temp_element + line[line.find('(')+1: line.find('))')] + ')'   
+    temp_element = temp_element + line[line.find('(')+1: line.rfind('))')] + ')'   
     return temp_element
 
 
