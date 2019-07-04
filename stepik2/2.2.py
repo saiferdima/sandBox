@@ -29,11 +29,6 @@ year, month, day = map(int, input().split(' '))
 newDate = datetime.date(year,month,day)
 dateDif = datetime.timedelta(days=int(input()))
 d = newDate+dateDif
-print(d.year, end=' ')
-print(d.month, end=' ')
-print(d.day)
-# print(year)
-# print(month)
-# print(day)
+print (d.year, d.month, d.day)
 
-print
+
