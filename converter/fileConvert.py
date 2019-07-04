@@ -19,17 +19,17 @@ def newFormat(line):
     temp_element = temp_element + line[line.find('(')+1: line.rfind('))')] + ')'   
     return temp_element
 
-with open ('input.txt','r') as file:
-    for line in file:
-        if line.find('= element')>0:
-            input_string = input_string+line.strip()
-            input_string = input_string+'\n'
-            print (newFormat(line))
-            result = result + '\n'+ newFormat(line)
-
-
-with open ('output.txt','w') as file2:
-    file2.write(result)
+# with open ('input.txt','r') as file:
+#     for line in file:
+#         if line.find('= element')>0:
+#             input_string = input_string+line.strip()
+#             input_string = input_string+'\n'
+#             print (newFormat(line))
+#             result = result + '\n'+ newFormat(line)
+#
+#
+# with open ('output.txt','w') as file2:
+#     file2.write(result)
     
 
 

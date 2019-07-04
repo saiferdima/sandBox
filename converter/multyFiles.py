@@ -5,10 +5,6 @@ directory_out = 'c:/DL/newFormatPages/'
 input_string = ''
 result = ''
 
-
-
-
-    
 print(os.listdir(directory))
 for filename in os.listdir(directory):  
     file =  open (os.path.join(directory,filename),'r')
