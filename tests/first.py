@@ -7,6 +7,7 @@ value2 = 'last_name'
 value3 = "city"
 value4 = 'country'
 
+
 try:
     browser = webdriver.Chrome()
     browser.get(link)
