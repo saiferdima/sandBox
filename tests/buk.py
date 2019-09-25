@@ -3,7 +3,7 @@ import time
 
 browser = webdriver.Chrome()
 browser.maximize_window()
-link = "http://qa61.friendly-tech.com/CPEAdminQA6_1/Login.aspx"
+link = ""
 text = "Friendly One-IoT"
 topMenuNames = ["CPE Profile", "Update a CPE", "Update Group", "Monitoring", "Event Monitoring", "Reports",
                 "File Management", "Settings"]
