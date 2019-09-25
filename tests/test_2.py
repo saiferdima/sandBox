@@ -2,12 +2,13 @@ from selenium import webdriver
 import time
 import math
 
-link = "http://suninjuly.github.io/simple_form_find_task.html"
+link = "http://suninjuly.github.io/find_xpath_form"
 value1 = 'first_name'
 value2 = 'last_name'
 value3 = "city"
 value4 = 'country'
-
+key_string =str(math.ceil(math.pow(math.pi, math.e)*10000))
+button = "//button[contains(text(),'Submit')]"
 
 try:
     browser = webdriver.Chrome()
@@ -21,12 +22,12 @@ try:
     input3.send_keys("Smolensk")
     input4 = browser.find_element_by_id(value4)
     input4.send_keys("Russia")
-    button = browser.find_element_by_css_selector("button.btn")
+    button = browser.find_element_by_xpath(button)
     button.click()
 
 finally:
     # успеваем скопировать код за 30 секунд
-    time.sleep(5)
+    time.sleep(30)
     # закрываем браузер после всех манипуляций
     browser.quit()
 
