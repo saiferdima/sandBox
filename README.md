@@ -1,5 +1,7 @@
 install python
-pip install selenium
+
+install selenium - "pip install selenium"
+
 
 install driver for chrome
 
@@ -11,6 +13,8 @@ add chromedriver to PATH
 to run tests:
 
 Run chromedriver
+
+run console
 
 cd to tests folder
 
