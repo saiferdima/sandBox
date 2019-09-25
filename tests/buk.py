@@ -15,8 +15,8 @@ try:
     password = browser.find_element_by_id("txtPassword")
     submit = browser.find_element_by_id("btnLogin_btn")
 
-    name.send_keys("buk3")
-    password.send_keys("buk3")
+    name.send_keys("")
+    password.send_keys("")
     submit.click()
     pageName = browser.find_element_by_id("lblTitle1").text
     assert pageName == text
