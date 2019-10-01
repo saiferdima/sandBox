@@ -1,32 +1,39 @@
 from selenium import webdriver
 import time
-import math
-
-link = "http://suninjuly.github.io/get_attribute.html"
-
-
-def calc(x):
-    return str(math.log(abs(12 * math.sin(int(x)))))
 
 try:
+    link = "http://suninjuly.github.io/registration1.html"
+    xpath = "//div[label[contains(text(),'*')]]/input"
+
+
     browser = webdriver.Chrome()
     browser.get(link)
-    x = browser.find_element_by_id("treasure").get_attribute("valuex")
-    answer_input = browser.find_element_by_id("answer")
-    robot_checkbox = browser.find_element_by_id("robotCheckbox")
-    robots_rule = browser.find_element_by_id("robotsRule")
+
+    elements = browser.find_elements_by_xpath(xpath)
+
+    for element in elements:
+       element.send_keys("testData")
+    # Ваш код, который заполняет обязательные поля
+    ...
+
+    # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
-    y = calc(x)
-    answer_input.clear()
-    answer_input.send_keys(y)
-    robot_checkbox.click()
-    robots_rule.click()
     button.click()
 
+    # Проверяем, что смогли зарегистрироваться
+    # ждем загрузки страницы
+    time.sleep(1)
+
+    # находим элемент, содержащий текст
+    welcome_text_elt = browser.find_element_by_tag_name("h1")
+    # записываем в переменную welcome_text текст из элемента welcome_text_elt
+    welcome_text = welcome_text_elt.text
+
+    # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
+    assert "Congratulations! You have successfully registered!" == welcome_text
+
 finally:
-    # успеваем скопировать код за 30 секунд
-    time.sleep(5)
+    # ожидание чтобы визуально оценить результаты прохождения скрипта
+    time.sleep(10)
     # закрываем браузер после всех манипуляций
     browser.quit()
-
-# не забываем оставить пустую строку в конце файла
