@@ -39,7 +39,7 @@ scandir==1.9.0
 selenium==3.141.0
 six==1.11.0
 twilio==6.19.2
-urllib3==1.24
+urllib3>=1.24.2
 virtualenv==16.7.5
 wcwidth==0.1.7
 zipp==0.6.0
